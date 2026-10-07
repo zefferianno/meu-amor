@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Uma Pergunta Especial ✨</title>
+  <style>
+    :root {
+      --bg-color: #000000;
+      --card-bg: #472ff7;
+      --primary: #c144bd;
+      --secondary: #232b4e;
+      --accent: #500978;
+      --text: #4a4e69;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 20px;
+      padding: 30px 20px;
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(205, 6, 198, 0.694);
+      border: 2px solid var(--accent);
+      position: relative;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      color: var(--primary);
+      margin-bottom: 20px;
+    }
+
+    .btn-group {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 25px;
+      position: relative;
+      min-height: 50px;
+    }
+
+    button {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: transform 0.2s, background-color 0.2s;
+    }
+
+    button:active {
+      transform: scale(0.95);
+    }
+
+    #btn-no {
+      background-color: var(--secondary);
+      position: relative;
+    }
+
+    .memories-list {
+      text-align: left;
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .memory-item {
+      background: #df84e0;
+      border-left: 4px solid var(--primary);
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card" id="main-card">
+  
+    <div id="quiz-step">
+      <h1 id="question-text">Você me ama? :3</h1>
+      <div class="btn-group">
+        <button id="btn-yes" onclick="handleYes()">Sim... fazer oque? 🫩</button>
+        <button id="btn-no" onclick="handleNo()">Não, VIADO 🤬🖕</button>
+      </div>
+    </div>
+
+  
+    <div id="final-step" class="hidden">
+      <h1> HEHEHEHEHEHEH EU SABIA! 🥰</h1>
+      <p style="margin-bottom: 15px;">Mim  feiz issu para ti lembrar do quanto oce é especial pa mim apesar de eu ser um escroto nojento:</p>
+      
+      <div class="memories-list">
+        <div class="memory-item">
+          <strong>🗓️ Nosso primeiro momento de todos:</strong>
+          <p>Nossos personagens juntos se beijando, ou melhor, voce me beijando pela primeira vez e nos dois ficamos bobinhos</p>
+        </div>
+        <div class="memory-item">
+  <strong>🖼️ um dos meus desenhos favoritos:</strong>
+  <img src="eu_e_meu_amor.jpeg"
+       alt="Um dos meus desenhos favoritos"
+       style="max-width: 100%; height: auto;">
+</div>
+<div class="memory-item">
+  <strong>🖼️ pre-mola verso:</strong>
+  <img src="os_celebros.jpeg"
+       alt="Um dos meus desenhos favoritos"
+       style="max-width: 100%; height: auto;">
+</div>
+<div class="memory-item">
+  <strong>🖼️ esse  é um dos primeiros desenhos depois  do evento:</strong>
+  <img src="jack_e_rose.jpeg"
+       alt="Um dos meus desenhos favoritos"
+       style="max-width: 100%; height: auto;">
+</div>
+<div class="memory-item">
+  <strong>🖼️ primeira edição do meu rosto:</strong>
+  <img src="primeira_ediçao_comigo.jpeg"
+       alt="Um dos meus desenhos favoritos"
+       style="max-width: 100%; height: auto;">
+</div>
+        <div class="memory-item">
+          <strong>💬 uma das coisas favoritas que tenho de vc falando de mim:</strong>
+          <img src="1.jpeg"
+       alt="Um dos meus desenhos favoritos"
+       style="max-width: 100%; height: auto;">
+       <img src="2.jpeg"
+       alt="mais um dos meus desenhos favoritos"
+       style="max-width: 100%; height: auto;">
+       <img src="3.jpeg"
+       alt="outru dos meus desenhos favoritos"
+       style="max-width: 100%; height: auto;">
+       <img src="4.jpeg"
+       alt="Um dos meus desenhos favoritos"
+       style="max-width: 100%; height: auto;">
+       <img src="5.jpeg"
+       alt="Um dos meus desenhos favoritos"
+       style="max-width: 100%; height: auto;">
+        </div>
+        <div class="memory-item">
+          <strong>💖 O que eu mais amo em você:</strong>
+          <p>literalmente tudo,seu jeitinho, seu corpo, sua personalidade, sua aparencia, sua personalidade, voce ser meu complemento perfeito, deus nos fez um para o outro, voce é tudo para mim e  eu te amo mais que qualquer coisa nesse mundo e eu não saberia viver a vida sem voce,aquele mes foi o pior dia da  minha vida.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const questions = [
+      "oce me ama?",
+      "tein certeza disso? :3",
+      "Certeza absoluta mesmuuuuu? ",
+      "Pensi beein... :3",
+      "oce ainda podi dizer siiiiii"
+    ];
+
+    let currentStep = 0;
+
+    function handleNo() {
+      currentStep++;
+      const questionText = document.getElementById('question-text');
+      const btnNo = document.getElementById('btn-no');
+
+      if (currentStep < questions.length) {
+        questionText.textContent = questions[currentStep];
+        
+        
+        const randomX = (Math.random() - 5.0) * 60;
+        const randomY = (Math.random() - 5.0) * 40;
+        btnNo.style.transform = `translate(${randomX}px, ${randomY}px)`;
+      } else {
+       
+        questionText.textContent = "qui pena, apertou tantu que quebrouh... só sobrou um:3";
+        btnNo.style.display = 'none';
+      }
+    }
+
+    function handleYes() {
+      document.getElementById('quiz-step').classList.add('hidden');
+      document.getElementById('final-step').classList.remove('hidden');
+    }
+  </script>
+</html>
